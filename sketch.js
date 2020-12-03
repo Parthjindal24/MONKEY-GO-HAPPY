@@ -31,7 +31,7 @@ monkey.addAnimation("monkeyrun",monkey_running);
   FoodGroup = createGroup();
   
   monkey.setCollider("rectangle",0,0,400,monkey.height);
-  monkey.debug = true;
+  monkey.debug = false;
  
    score=0;
 }
@@ -90,8 +90,11 @@ if(frameCount%150===0){
   var banana = createSprite(600,120,40,10);
   
  banana.y = Math.round(random(200,400)) ;
+   
+ banana.y = Math.round(random(200,400)) ;
   banana.scale=0.1;
-  banana.velocityX=-4
+  banana.velocityX=-4;
+  banana.lifetime=160;
   banana.addImage(bananaImage);
 
     FoodGroup.add(banana);
@@ -107,9 +110,13 @@ function spawnobstacles(){
   obstacle.addImage(obstaceImage);
    obstacle.scale=0.2;
    obstacle.velocityX=-5;
+   obstacle.lifetime=130;
    obstacleGroup.add(obstacle);
  }
 }
+
+
+
 
 
 
